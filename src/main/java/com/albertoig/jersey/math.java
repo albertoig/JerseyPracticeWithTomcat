@@ -6,11 +6,18 @@ package com.albertoig.jersey;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
-@Path("/factorial")
-public class math {
+@Path("/math")
+public class Math {
 
     @GET
+    @Path("/factorial")
     public String factorial(@QueryParam("base") long base) {
+        return Long.toString(getFactorial(base));
+    }
+
+    @GET
+    @Path("/factorial/{base}")
+    public String factorialWithUrlParam(@PathParam("base") long base) {
         return Long.toString(getFactorial(base));
     }
 
@@ -19,11 +26,6 @@ public class math {
             return getFactorial(base -1) * base;
         }
         return 1;
-    }
-
-    @GET @Path("/{base}")
-    public String factorialWithUrlParam(@PathParam("base") long base) {
-        return Long.toString(getFactorial(base));
     }
 
 }

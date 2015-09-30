@@ -14,4 +14,10 @@ public class HelloWorld {
         return "Hello world!!!";
     }
 
+    @GET
+    @Produces("text/html")
+    public String getMessageAsHTML() {
+        return "<b>Hello world!!!</b>";
+    }
+
 }
