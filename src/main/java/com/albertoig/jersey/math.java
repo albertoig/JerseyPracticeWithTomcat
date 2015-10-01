@@ -4,7 +4,6 @@ package com.albertoig.jersey;
  * Created by aiglesias on 29/9/15.
  */
 import javax.ws.rs.*;
-import javax.ws.rs.core.MediaType;
 
 @Path("/math")
 public class Math {
